@@ -2,12 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Check Python') {
+       stage('Check Python') {
             steps {
+                bat 'echo %PATH%'
+                bat 'where python'
                 bat 'python --version'
                 bat 'pip --version'
             }
-        }
+}
+
+        
 
         stage('Install Dependencies') {
             steps {
