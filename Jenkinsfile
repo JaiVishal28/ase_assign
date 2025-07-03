@@ -4,21 +4,20 @@ pipeline {
     stages {
         stage('Check Python') {
             steps {
-                bat 'echo %PATH%'
-                bat '"C:\\Program Files\\Python312\\python.exe" --version'
-                bat '"C:\\Program Files\\Python312\\Scripts\\pip.exe" --version'
+                bat '"C:\\Users\\Jai Vishal.R\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" --version'
+                bat '"C:\\Users\\Jai Vishal.R\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\pip.exe" --version'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                bat '"C:\\Program Files\\Python312\\Scripts\\pip.exe" install -r requirements.txt'
+                bat '"C:\\Users\\Jai Vishal.R\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\pip.exe" install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat '"C:\\Program Files\\Python312\\python.exe" -m unittest test_app.py'
+                bat '"C:\\Users\\Jai Vishal.R\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m unittest test_app.py'
             }
         }
     }
