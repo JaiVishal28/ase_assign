@@ -2,26 +2,23 @@ pipeline {
     agent any
 
     stages {
-       stage('Check Python') {
+        stage('Check Python') {
             steps {
                 bat 'echo %PATH%'
-                bat 'where python'
-                bat 'python --version'
-                bat 'pip --version'
+                bat '"C:\\Program Files\\Python312\\python.exe" --version'
+                bat '"C:\\Program Files\\Python312\\Scripts\\pip.exe" --version'
             }
-}
-
-        
+        }
 
         stage('Install Dependencies') {
             steps {
-                bat 'pip install -r requirements.txt'
+                bat '"C:\\Program Files\\Python312\\Scripts\\pip.exe" install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'python -m unittest test_app.py'
+                bat '"C:\\Program Files\\Python312\\python.exe" -m unittest test_app.py'
             }
         }
     }
